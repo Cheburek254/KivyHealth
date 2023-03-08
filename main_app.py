@@ -7,7 +7,7 @@ from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 from kivy.core.window import Window
 from kivy.uix.scrollview import ScrollView
-from instructions import txt_instruction, txt_test1, txt_test2, txt_test3, txt_sits
+from instructions import txt_instruction, txt_test1, txt_test2, txt_test3, txt_sits,advice
 from ruffier import test
 from kivy.clock import Clock
 from seconds import Seconds
@@ -22,7 +22,7 @@ p2 = 0
 p3 =  0
 color = (0.43, 0.4, 0.84, 1)
 btn_color = (0.18, 0.07, 0.83, 1)
-
+black = (0, 0, 0, 1)
 class MyTextInput(TextInput):
     def __init__(self,**args):
         super().__init__()
@@ -85,10 +85,10 @@ class InstrScr(Screen):
         self.in_name = TextInput(text = '',multiline =False)
         lbl2 = Label(text = '[b]' +'Введите возраст'+'[/b]', halign = 'right', markup=True)
         self.in_age = TextInput(text = '', multiline=False)
-        self.btn = Button(text ='[u]' +  'начать'+ '[/u]', size_hint=(0.3, 0.4), pos_hint = {'center_x': 0.5}, background_color = btn_color, markup=True)
+        self.btn = Button(text ='[u]' +  'начать'+ '[/u]',size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         l1 = BoxLayout()
         self.btn.on_press = self.next
-        self.btn2 = Button(text ='[u]' +  'назад'+ '[/u]', size_hint=(0.3, 0.4), pos_hint = {'center_x': 0.5}, background_color = btn_color, markup=True)
+        self.btn2 = Button(text ='[u]' +  'назад'+ '[/u]',size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         
         self.btn2.on_press = self.back
         line1 = BoxLayout(size_hint=(0.8,None), height='30sp')#size_hint=(0.8,None), height='30sp'
@@ -145,7 +145,7 @@ class PulseScr(Screen):
         
         self.pulse1 = TextInput(multiline =False, size_hint=(0.2, 0.5), pos_hint = {'center_x': 0.5})
         self.pulse1.set_disabled(True)
-        self.btn = Button(text ='[u]' +  'Начать таймер'+ '[/u]', size_hint=(0.3, 0.2), pos_hint = {'center_x': 0.5},background_color = btn_color, markup=True)
+        self.btn = Button(text ='[u]' +  'Начать таймер'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn.on_press = self.next
         
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
@@ -187,15 +187,16 @@ class CheckSits(Screen):
         self.finished = False
         self.next_screen = False
         instr = Label(text = txt_sits)
+        wimg = Image(source = 'l2_1.jpg')
         self.timer = Seconds(45)
         self.timer.bind(done=self.sec_finished)
-        self.btn = Button(text ='[u]' + 'Запустить таймер'+ '[/u]', size_hint=(0.3, 0.2), pos_hint = {'center_x': 0.5},background_color = btn_color, markup=True)
+        self.btn = Button(text ='[u]' + 'Запустить таймер'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn.on_press = self.next
         
         h = BoxLayout()
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
         outer.add_widget(instr)
-        
+        outer.add_widget(wimg)
         
         outer.add_widget(self.timer)
         outer.add_widget(self.btn)
@@ -223,14 +224,15 @@ class PulseScr2(Screen):
     def __init__(self,**kwargs):
         super().__init__(**kwargs)
         instr = Label(text = txt_test3)
+        wimg = Image(source = 'timer.jpg')
         self.stage = 0
         self.next_screen = False
         self.lbl1 = Label(text = 'Измерьте пульс')
         lbl_result2 = Label(text ='[b]' + 'Введите результат'+'[/b]', halign='right', markup=True)
-        lbl_result3 = Label(text = '[b]' +'Введите результат после отдыха'+'[/b]', halign='right', markup=True)
+        lbl_result3 = Label(text = '[b]' +'после отдыха'+'[/b]', halign='right', markup=True)
         self.pulse1 = TextInput(multiline =False,  pos_hint = {'center_x': 0.5})
         self.pulse2 = TextInput(multiline =False, pos_hint = {'center_x': 0.5})
-        self.btn = Button(text ='[u]' + 'Запустить таймер'+ '[/u]', size_hint=(0.3, 0.2), pos_hint = {'center_x': 0.5},background_color = btn_color, markup=True)
+        self.btn = Button(text ='[u]' + 'Запустить таймер'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn.on_press = self.next
         self.timer = Seconds(15)
         
@@ -239,6 +241,7 @@ class PulseScr2(Screen):
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
         outer.add_widget(instr)
         outer.add_widget(self.lbl1)
+        outer.add_widget(wimg)
         outer.add_widget(self.timer)
         line1 = BoxLayout(size_hint=(0.8,None), height='30sp')
         line2 = BoxLayout(size_hint=(0.8,None), height='30sp')
@@ -298,8 +301,10 @@ class Result(Screen):
         super().__init__(**kwargs)
         self.outer = BoxLayout(orientation='vertical', padding=8, spacing=8)
         
-        self.btn = Button(text ='[u]' +'начать заново'+ '[/u]', size_hint=(0.3, 0.2), pos_hint = {'center_x': 0.5}, background_color = btn_color, markup=True)
+        self.btn = Button(text ='[u]' +'начать заново'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn.on_press = self.next
+        self.btn_adv = Button(text ='[u]' +'Как улучшить результат?'+ '[/u]',size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn_adv.on_press = self.to_advice
         self.instr = Label(text = '')
         self.outer.add_widget(self.instr)
         self.add_widget(self.outer)
@@ -308,6 +313,8 @@ class Result(Screen):
     def before(self):
         global name
         self.instr.text = name + '\n' + test(p1,p2,p3,age)
+    def to_advice(self):
+        self.manager.current = 'advice'
     def next(self):
         global age
         global name
@@ -322,18 +329,36 @@ class Result(Screen):
         self.manager.current = 'test'
 
 
-class HeartCheck(App):
-    def build(self):
-        sm = ScreenManager()
-        sm.add_widget(InstrScr(name='instr'))
-        sm.add_widget(PulseScr(name='pulse1'))
-        sm.add_widget(CheckSits(name='sits'))
-        sm.add_widget(PulseScr2(name='pulse2'))
-        sm.add_widget(Result(name='result'))
-        Window.clearcolor = color
-        return sm
+class Advice(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        lbl = Label(text = advice,font_size = 30)
+        
+        self.btn = Button(text ='[u]' +'Назад'+ '[/u]',size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn.on_press = self.back
+        
+        outer = BoxLayout(orientation='vertical', padding=8, spacing=8)
+        outer.add_widget(lbl)
+        outer.add_widget(self.btn)
+        self.add_widget(outer)
+    def back(self):
+        self.manager.current = 'result'
 
-#app = HeartCheck()
-#app.run()
+
+
+if __name__ == "__main__":
+    class HeartCheck(App):
+        def build(self):
+            sm = ScreenManager()
+            sm.add_widget(InstrScr(name='instr'))
+            sm.add_widget(PulseScr(name='pulse1'))
+            sm.add_widget(CheckSits(name='sits'))
+            sm.add_widget(PulseScr2(name='pulse2'))
+            sm.add_widget(Result(name='result'))
+            Window.clearcolor = color
+            return sm
+
+    app = HeartCheck()
+    app.run()
 
 
