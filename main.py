@@ -79,12 +79,12 @@ class First(Screen):
         self.btn = Button(text ='[b]' +  'далее'+ '[/b]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 90)
         self.btn.on_press = self.next
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
-        '''self.btn3 = Button(text ='[b]' +  'Пользовательское\nсоглашение'+ '[/b]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 50)
-        self.btn3.on_press = self.next3'''
+        self.btn3 = Button(text ='[b]' +  'Пользовательское\nсоглашение'+ '[/b]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 50)
+        self.btn3.on_press = self.next3
         l1 = BoxLayout()
         outer.add_widget(instr)
         l1.add_widget(self.btn)
-        #l1.add_widget(self.btn3)
+        l1.add_widget(self.btn3)
         outer.add_widget(l1)
         self.add_widget(outer)
     def next(self):
@@ -244,6 +244,7 @@ class KivyHealth(App):
         sm.add_widget(CheckSits(name='sits'))
         sm.add_widget(PulseScr2(name='pulse2'))
         sm.add_widget(Result(name='result'))
+        sm.add_widget(Advice(name='advice'))
         Window.clearcolor = color
         return sm
 
