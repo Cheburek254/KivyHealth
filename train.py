@@ -23,16 +23,16 @@ class train_main(Screen):
         super().__init__(**kwargs)
         lbl1 = Label(text = '[b]' +tr1 + '[/b]', halign = 'right', markup=True)
 
-        self.btn1 = Button(text ='[u]' +  'Уровень 1'+ '[/u]', size_hint=(0.8, 0.7), pos_hint = {'center_x': 0.5},markup=True,color=black,background_normal = 'button_vertical.png',font_size = 50)
+        self.btn1 = Button(text ='[u]' +'[b]'+  'Уровень 1'+ '[/u]',markup=True,color=black,background_normal = 'button_vertical.png',font_size = 50)
         self.btn1.on_press = self.next1
 
-        self.btn2 = Button(text ='[u]' +  'Уровень 2'+ '[/u]', size_hint=(0.8, 0.7), pos_hint = {'center_x': 0.5},markup=True,color=black,background_normal = 'button_vertical.png',font_size = 50)
+        self.btn2 = Button(text ='[u]' + '[b]'+ 'Уровень 2'+ '[/u]',markup=True,color=black,background_normal = 'button_vertical.png',font_size = 50)
         self.btn2.on_press = self.next2
 
-        self.btn3 = Button(text ='[u]' +  'Уровень 3'+ '[/u]', size_hint=(0.8, 0.7), pos_hint = {'center_x': 0.5},markup=True,color=black,background_normal = 'button_vertical.png',font_size = 50)
+        self.btn3 = Button(text ='[u]' +'[b]'+ '[b]'+ 'Уровень 3'+ '[/u]',markup=True,color=black,background_normal = 'button_vertical.png',font_size = 50)
         self.btn3.on_press = self.next3
 
-        self.btn = Button(text ='[u]' +  'назад'+ '[/u]', size_hint=(0.8, 0.7), pos_hint = {'center_x': 0.5},markup=True,color=black,background_normal = 'button_vertical.png',font_size = 50)
+        self.btn = Button(text ='[u]'+'[b]' +  'назад'+ '[/u]',size_hint = (0.5,0.5) , pos_hint = {'center_x': 0.5},markup=True,color=black,background_normal = 'button_vertical.png',font_size = 50)
         self.btn.on_press = self.back
 
         main = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
@@ -98,12 +98,12 @@ class tr_l1_1(Screen):
         wimg = Image(source='l1_1.jpg')
         '''self.timer = Seconds(45)#45
         self.timer.bind(done=self.sec_finished)'''
-        self.btn = Button(text ='[u]' + 'Далее'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn = Button(text ='[u]'+'[b]' + 'Далее'+ '[/u]', pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn.on_press = self.next
         
-        self.btn1 = Button(text ='[u]' +  'Завершить'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn1 = Button(text ='[u]'+'[b]' +  'Завершить'+ '[/u]',pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn1.on_press = self.back
-        hor = BoxLayout(size_hint=(0.8,None))
+        hor = BoxLayout()
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
         outer.add_widget(instr)
         outer.add_widget(wimg)
@@ -144,10 +144,10 @@ class tr_l1_2(Screen):
         wimg = Image(source='l1_2.jpg')
         #self.timer = Seconds(45)
         #self.timer.bind(done=self.sec_finished)
-        self.btn = Button(text ='[u]' + 'Далее'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn = Button(text ='[u]'+'[b]' + 'Далее'+ '[/u]',pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn.on_press = self.next
         
-        self.btn1 = Button(text ='[u]' +  'Завершить'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn1 = Button(text ='[u]'+'[b]' +  'Завершить'+ '[/u]',pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn1.on_press = self.back
 
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
@@ -155,7 +155,7 @@ class tr_l1_2(Screen):
         outer.add_widget(wimg)
         #outer.add_widget(self.timer)
         
-        hor = BoxLayout(size_hint=(0.8,None))
+        hor = BoxLayout()
         hor.add_widget(self.btn)
         hor.add_widget(self.btn1)
         outer.add_widget(hor)
@@ -188,17 +188,17 @@ class tr_l1_3(Screen):
         
         instr = Label(text = '[b]'+'Упражнение 3.'+'[/b]'+ 'Выпады в сторону\nКолличество повторений:'+'[b]'+ '10 раз на каждую ногу'+'[/b]',halign = 'center',font_size = 45,markup = True)
         wimg = Image(source='l1_3.jpg')
-        self.btn = Button(text ='[u]' + 'Далее'+ '[/u]',size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn = Button(text ='[u]'+'[b]' + 'Далее'+ '[/u]', pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn.on_press = self.next
         
-        self.btn1 = Button(text ='[u]' +  'Завершить'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn1 = Button(text ='[u]'+'[b]' +  'Завершить'+ '[/u]',  pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn1.on_press = self.back
 
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
         outer.add_widget(instr)
         outer.add_widget(wimg)
         
-        hor = BoxLayout(size_hint=(0.8,None))
+        hor = BoxLayout()
         hor.add_widget(self.btn)
         hor.add_widget(self.btn1)
         outer.add_widget(hor)
@@ -225,16 +225,16 @@ class tr_l1_4(Screen):
         
         instr = Label(text = '[b]'+'Упражнение 4.'+'[/b]'+ 'Подъемы ног\nКоличество повторений:'+'[b]'+ '12 раз'+'[/b]',halign = 'center',font_size = 45,markup = True)
         wimg = Image(source='l1_4.jpg')
-        self.btn = Button(text ='[u]' +  'Далее'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn = Button(text ='[u]'+'[b]' +  'Далее'+ '[/u]', pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn.on_press = self.next
 
-        self.btn1 = Button(text ='[u]' +  'Завершить'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn1 = Button(text ='[u]'+'[b]' +  'Завершить'+ '[/u]', pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn1.on_press = self.back
 
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
         outer.add_widget(instr)
         outer.add_widget(wimg)
-        hor = BoxLayout(size_hint=(0.8,None))
+        hor = BoxLayout()
         hor.add_widget(self.btn)
         hor.add_widget(self.btn1)
         outer.add_widget(hor)
@@ -266,14 +266,14 @@ class tr_l1_5(Screen):
         self.timer.bind(done=self.sec_finished)
         
         
-        self.btn1 = Button(text ='[u]' +  'Запустить таймер'+ '[/u]',size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn1 = Button(text ='[u]'+'[b]' +  'Запустить таймер'+ '[/u]', pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn1.on_press = self.back
 
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
         outer.add_widget(instr)
         outer.add_widget(wimg)
         outer.add_widget(self.timer)
-        hor = BoxLayout(size_hint=(0.8,None))
+        hor = BoxLayout()
         hor.add_widget(self.btn1)
         #hor.add_widget(self.btn1)
         outer.add_widget(hor)
@@ -283,7 +283,7 @@ class tr_l1_5(Screen):
         self.next_screen = True
         self.btn1.set_disabled(False)
         
-        self.btn1.text ='[u]' +  'Завершить'+ '[/u]'
+        self.btn1.text ='[u]'+'[b]' +  'Завершить'+ '[/u]'
     
     def back(self):
         if not self.next_screen:
@@ -292,7 +292,7 @@ class tr_l1_5(Screen):
         else:
             self.manager.current = 'train_main'
             self.timer.restartnew(60)#60
-            self.btn1.text ='[u]' +  'Запустить таймер'+ '[/u]'
+            self.btn1.text ='[u]'+'[b]' +  'Запустить таймер'+ '[/u]'
             self.next_screen = False
 
 
@@ -312,13 +312,13 @@ class tr_l2_1(Screen):
         
         instr = Label(text = '[b]'+'Упражнение 1.'+'[/b]'+ 'Приседания\nКоличество повторений:'+'[b]'+ '20 раз'+'[/b]',halign = 'center',font_size = 45,markup = True)
         wimg = Image(source='l2_1.jpg')
-        self.btn = Button(text ='[u]' + 'Далее'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn = Button(text ='[u]'+'[b]' + 'Далее'+ '[/u]', pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn.on_press = self.next
         
-        self.btn1 = Button(text ='[u]' +  'Завершить'+ '[/u]',size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn1 = Button(text ='[u]'+'[b]' +  'Завершить'+ '[/u]', pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn1.on_press = self.back
 
-        hor = BoxLayout(size_hint=(0.8,None))
+        hor = BoxLayout()
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
         outer.add_widget(instr)
         outer.add_widget(wimg)
@@ -348,17 +348,17 @@ class tr_l2_2(Screen):
         
         instr = Label(text = '[b]'+'Упражнение 2.'+'[/b]'+ 'Наклоны туловища\nКоличество повторений:'+'[b]'+ '20 раз'+'[/b]',halign = 'center',font_size = 45,markup = True)
         wimg = Image(source='l2_2.jpg')
-        self.btn = Button(text ='[u]' + 'Далее'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn = Button(text ='[u]'+'[b]' + 'Далее'+ '[/u]', pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn.on_press = self.next
         
-        self.btn1 = Button(text ='[u]' +  'Завершить'+ '[/u]',size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn1 = Button(text ='[u]'+'[b]' +  'Завершить'+ '[/u]',pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn1.on_press = self.back
 
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
         outer.add_widget(instr)
         outer.add_widget(wimg)
         
-        hor = BoxLayout(size_hint=(0.8,None))
+        hor = BoxLayout()
         hor.add_widget(self.btn)
         hor.add_widget(self.btn1)
         outer.add_widget(hor)
@@ -385,16 +385,16 @@ class tr_l2_3(Screen):
         
         instr = Label(text = '[b]'+'Упражнение 3.'+'[/b]'+ 'Перебирание руками\nКоличество повторений:'+'[b]'+ '3 подхода х 10 раз'+'[/b]',halign = 'center',font_size = 45,markup = True)
         wimg = Image(source='l2_3.jpg')
-        self.btn = Button(text ='[u]' + 'Далее'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn = Button(text ='[u]'+'[b]' + 'Далее'+ '[/u]',pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn.on_press = self.next
         
-        self.btn1 = Button(text ='[u]' +  'Завершить'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn1 = Button(text ='[u]'+'[b]' +  'Завершить'+ '[/u]',pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn1.on_press = self.back
 
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
         outer.add_widget(instr)
         outer.add_widget(wimg)
-        hor = BoxLayout(size_hint=(0.8,None))
+        hor = BoxLayout()
         hor.add_widget(self.btn)
         hor.add_widget(self.btn1)
         outer.add_widget(hor)
@@ -421,16 +421,16 @@ class tr_l2_4(Screen):
         
         instr = Label(text = '[b]'+'Упражнение 4.'+'[/b]'+ 'Шаг-выпад вперёд\nКолличество повторений:'+'[b]'+ '3 подхода х 20 раз'+'[/b]',halign = 'center',font_size = 45,markup = True)
         wimg = Image(source='2v.jpg')
-        self.btn = Button(text ='[u]' + 'Далее'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn = Button(text ='[u]'+'[b]' + 'Далее'+ '[/u]',pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn.on_press = self.next
 
-        self.btn1 = Button(text ='[u]' +  'Завершить'+ '[/u]',size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn1 = Button(text ='[u]'+'[b]' +  'Завершить'+ '[/u]',pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn1.on_press = self.back
 
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
         outer.add_widget(instr)
         outer.add_widget(wimg)
-        hor = BoxLayout(size_hint=(0.8,None))
+        hor = BoxLayout()
         hor.add_widget(self.btn)
         hor.add_widget(self.btn1)
         outer.add_widget(hor)
@@ -455,13 +455,13 @@ class tr_l2_5(Screen):
         
         instr = Label(text = '[b]'+'Упражнение 5.'+'[/b]'+ 'Махи ногами\nКоличество повторений:'+'[b]'+ '3 подхода х 15 раз\n на каждую ногу'+'[/b]',halign = 'center',font_size = 45,markup = True)
         wimg = Image(source='l2_6.jpg')
-        self.btn1 = Button(text ='[u]' + 'Завершить'+ '[/u]',size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn1 = Button(text ='[u]'+'[b]' + 'Завершить'+ '[/u]',pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn1.on_press = self.back
 
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
         outer.add_widget(instr)
         outer.add_widget(wimg)
-        hor = BoxLayout(size_hint=(0.8,None))
+        hor = BoxLayout()
         hor.add_widget(self.btn1)
         #hor.add_widget(self.btn1)
         outer.add_widget(hor)
@@ -494,13 +494,13 @@ class tr_l3_1(Screen):
         
         instr = Label(text = '[b]'+'Упражнение 1.'+'[/b]'+ 'Джамплинг джек\nКоличество повторений:'+'[b]'+ '3 подхода х 15 раз'+'[/b]',halign = 'center',font_size = 45,markup = True)
         wimg = Image(source='l3_1.jpg')
-        self.btn = Button(text ='[u]' + 'Далее'+ '[/u]',size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn = Button(text ='[u]'+'[b]' + 'Далее'+ '[/u]', pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn.on_press = self.next
         
-        self.btn1 = Button(text ='[u]' +  'Завершить'+ '[/u]',size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn1 = Button(text ='[u]'+'[b]' +  'Завершить'+ '[/u]',pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn1.on_press = self.back
         
-        hor = BoxLayout(size_hint=(0.8,None))
+        hor = BoxLayout()
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
         outer.add_widget(instr)
         outer.add_widget(wimg)
@@ -530,17 +530,17 @@ class tr_l3_2(Screen):
         
         instr = Label(text = '[b]'+'Упражнение 2.'+'[/b]'+ 'Разношка на возвышенности\nКоличество повторений:'+'[b]'+ '3 подхода х 50 раз'+'[/b]',halign = 'center',font_size = 45,markup = True)
         wimg = Image(source='l3_2.jpg')
-        self.btn = Button(text ='[u]' + 'Далее'+ '[/u]',size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn = Button(text ='[u]'+'[b]' + 'Далее'+ '[/u]', pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn.on_press = self.next
         
-        self.btn1 = Button(text ='[u]' +  'Завершить'+ '[/u]',size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn1 = Button(text ='[u]'+'[b]' +  'Завершить'+ '[/u]', pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn1.on_press = self.back
 
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
         outer.add_widget(instr)
         outer.add_widget(wimg)
         
-        hor = BoxLayout(size_hint=(0.8,None))
+        hor = BoxLayout()
         hor.add_widget(self.btn)
         hor.add_widget(self.btn1)
         outer.add_widget(hor)
@@ -567,17 +567,17 @@ class tr_l3_3(Screen):
         
         instr = Label(text = '[b]'+'Упражнение 3.'+'[/b]'+ 'Скалолаз\nКолличество повторений:'+'[b]'+ '30 раз х 3 подхода'+'[/b]',halign = 'center',font_size = 45,markup = True)
         wimg = Image(source='skalolaz.jpg')
-        self.btn = Button(text ='[u]' + 'Далее'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn = Button(text ='[u]'+'[b]' + 'Далее'+ '[/u]',  pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn.on_press = self.next
         
-        self.btn1 = Button(text ='[u]' +  'Завершить'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn1 = Button(text ='[u]'+'[b]' +  'Завершить'+ '[/u]',  pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn1.on_press = self.back
 
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
         outer.add_widget(instr)
         outer.add_widget(wimg)
         
-        hor = BoxLayout(size_hint=(0.8,None))
+        hor = BoxLayout()
         hor.add_widget(self.btn)
         hor.add_widget(self.btn1)
         outer.add_widget(hor)
@@ -606,16 +606,16 @@ class tr_l3_4(Screen):
         
         instr = Label(text = '[b]'+'Упражнение 4.'+'[/b]'+ 'Выпрыгивания\nКоличество повторений:'+'[b]'+ '3 подхода х 15 раз'+'[/b]',halign = 'center',font_size = 45,markup = True)
         wimg = Image(source='l3_4.jpg')
-        self.btn = Button(text ='[u]' +  'Далее'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn = Button(text ='[u]'+'[b]' +  'Далее'+ '[/u]', pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn.on_press = self.next
 
-        self.btn1 = Button(text ='[u]' +  'Завершить'+ '[/u]',size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn1 = Button(text ='[u]'+'[b]' +  'Завершить'+ '[/u]', pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn1.on_press = self.back
 
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
         outer.add_widget(instr)
         outer.add_widget(wimg)
-        hor = BoxLayout(size_hint=(0.8,None))
+        hor = BoxLayout()
         hor.add_widget(self.btn)
         hor.add_widget(self.btn1)
         outer.add_widget(hor)
@@ -646,14 +646,14 @@ class tr_l3_5(Screen):
         self.timer.bind(done=self.sec_finished)
         wimg = Image(source='l3_5.jpg')
         
-        self.btn1 = Button(text ='[u]' +  'Запустить таймер'+ '[/u]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
+        self.btn1 = Button(text ='[u]'+'[b]' +  'Запустить таймер'+ '[/u]',  pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 40)
         self.btn1.on_press = self.back
 
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
         outer.add_widget(instr)
         outer.add_widget(wimg)
         outer.add_widget(self.timer)
-        hor = BoxLayout(size_hint=(0.8,None))
+        hor = BoxLayout()
         hor.add_widget(self.btn1)
         outer.add_widget(hor)
         self.add_widget(outer)
@@ -662,7 +662,7 @@ class tr_l3_5(Screen):
         self.next_screen = True
         self.btn1.set_disabled(False)
         
-        self.btn1.text ='[u]' +  'Завершить'+ '[/u]'
+        self.btn1.text ='[u]'+'[b]' +  'Завершить'+ '[/u]'
     
     def back(self):
         if not self.next_screen:
@@ -671,5 +671,5 @@ class tr_l3_5(Screen):
         else:
             self.manager.current = 'train_main'
             self.timer.restartnew(120)#90
-            self.btn1.text ='[u]' +  'Запустить таймер'+ '[/u]'
+            self.btn1.text ='[u]'+'[b]' +  'Запустить таймер'+ '[/u]'
             self.next_screen = False

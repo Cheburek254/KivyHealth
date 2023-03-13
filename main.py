@@ -76,7 +76,7 @@ class First(Screen):
     def __init__(self,**kwargs):
         super().__init__(**kwargs)
         instr = Label(text = ti,font_size = 45,halign = 'justify')
-        self.btn = Button(text ='[b]' +  'далее'+ '[/b]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 90)
+        self.btn = Button(text ='[b]' +  'далее'+ '[/b]',  pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 90)
         self.btn.on_press = self.next
         outer = BoxLayout(orientation = 'vertical', padding = 8, spacing = 8)
         '''self.btn3 = Button(text ='[b]' +  'Пользовательское\nсоглашение'+ '[/b]', size_hint=(0.5, 0.4), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_horizontal.png',font_size = 50)
@@ -102,7 +102,7 @@ class Main(Screen):
         mainbutton = Button(text='Меню',  size_hint=(0.7, 0.6), pos_hint = {'center_x': 0.5})'''
         self.btn1 = Button(text ='[b]' +  'Тест\nРуфье'+ '[/b]', size_hint=(0.8, 0.7), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_vertical.png',font_size = 60)
         self.btn1.on_press = self.next1
-        self.btn2 = Button(text ='[b]' +  'Тренировки'+ '[/b]', size_hint=(0.8, 0.7), pos_hint = {'center_x': 0.5},markup=True,color=black,background_normal = 'button_vertical.png',font_size = 50)
+        self.btn2 = Button(text ='[b]' +  '  Тренировки'+ '[/b]', size_hint=(0.8, 0.7), pos_hint = {'center_x': 0.5},markup=True,color=black,background_normal = 'button_vertical.png',font_size = 50)
         self.btn2.on_press = self.next2
         '''self.btn3 = Button(text ='[b]' +  'Пользовательское\nсоглашение'+ '[/b]', size_hint=(0.8, 0.7), pos_hint = {'center_x': 0.5}, markup=True,color=black,background_normal = 'button_vertical.png',font_size = 50)
         self.btn3.on_press = self.next3'''

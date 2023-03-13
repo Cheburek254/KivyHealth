@@ -12,7 +12,7 @@ class Seconds(Label):
         self.done = False
         self.total = total
         my_text = 'Прошло секунд:' + str(self.current)
-        super().__init__(text=my_text,markup = True,font_size = 45)
+        super().__init__(text=my_text,markup = True,font_size = 75)
 
     def restart(self,total,**kwargs):
         self.done = False
